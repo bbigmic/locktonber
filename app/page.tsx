@@ -14,20 +14,24 @@ export default function Home() {
     const timer = setInterval(() => {
       const now = new Date()
       
-      // Znajdź najbliższy piątek o 20:00
-      const nextFriday = new Date(now)
-      const currentDay = now.getDay() // 0 = niedziela, 5 = piątek
-      const daysUntilFriday = currentDay <= 5 ? (5 - currentDay) : (5 + 7 - currentDay)
+      // Znajdź najbliższy 1 dzień miesiąca o 2:00
+      const nextFirstOfMonth = new Date(now)
+      nextFirstOfMonth.setDate(1)
+      nextFirstOfMonth.setHours(2, 0, 0, 0)
       
-      nextFriday.setDate(now.getDate() + daysUntilFriday)
-      nextFriday.setHours(20, 0, 0, 0)
-      
-      // Jeśli już minął piątek 20:00, ustaw na następny piątek
-      if (now.getDay() === 5 && now.getHours() >= 20) {
-        nextFriday.setDate(nextFriday.getDate() + 7)
+      // Jeśli już minął 1 dzień tego miesiąca o 2:00, ustaw na następny miesiąc
+      if (now.getDate() > 1 || (now.getDate() === 1 && now.getHours() >= 2)) {
+        nextFirstOfMonth.setMonth(nextFirstOfMonth.getMonth() + 1)
       }
       
-      const distance = nextFriday.getTime() - now.getTime()
+      // Upewnij się, że nie jesteśmy przed 1 listopada 2025
+      const startDate = new Date(2025, 10, 1, 2, 0, 0, 0) // listopad = 10 (0-indexed)
+      if (nextFirstOfMonth < startDate) {
+        nextFirstOfMonth.setFullYear(2025, 10, 1)
+        nextFirstOfMonth.setHours(2, 0, 0, 0)
+      }
+      
+      const distance = nextFirstOfMonth.getTime() - now.getTime()
 
       if (distance > 0) {
         setTimeLeft({
@@ -77,7 +81,7 @@ export default function Home() {
               October Airdrop
             </h2>
             <p className="text-gray-300 mb-6">
-              80 billion tokens distributed proportionally to all holders in October!
+              87 billion tokens distributed proportionally to all holders in following months!
             </p>
             <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full hover:opacity-90 transition-opacity">
               Join Now
@@ -87,7 +91,7 @@ export default function Home() {
           {/* Countdown Timer */}
           <div className="bg-gray-800/30 rounded-2xl p-8 mb-16 max-w-2xl mx-auto">
             <h3 className="text-xl font-bold text-[#0098EA] mb-6">
-              First Airdrop in:
+              Next Monthly Airdrop in:
             </h3>
             <div className="grid grid-cols-4 gap-4">
               <div className="text-center">
@@ -116,7 +120,7 @@ export default function Home() {
       <footer className="py-8 bg-gray-900 border-t border-gray-800">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="text-gray-400 text-sm">
-            © 2024 lockTONber. All rights reserved.
+            © 2025 lockTONber. All rights reserved.
           </div>
         </div>
       </footer>
