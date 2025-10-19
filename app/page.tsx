@@ -68,7 +68,7 @@ export default function Home() {
             </div>
             <div className="bg-gray-800/50 rounded-xl p-6 text-center">
               <div className="text-3xl font-bold text-[#0098EA] mb-2">1B</div>
-              <div className="text-gray-300">Liquidity Pool</div>
+              <div className="text-gray-300">Started Liquidity Pool</div>
             </div>
             <div className="bg-gray-800/50 rounded-xl p-6 text-center">
               <div className="text-3xl font-bold text-[#0098EA] mb-2">87B</div>
@@ -78,7 +78,7 @@ export default function Home() {
 
           <div className="bg-gray-800/30 rounded-2xl p-8 max-w-2xl mx-auto mb-8">
             <h2 className="text-2xl font-bold text-[#0098EA] mb-4">
-              October Airdrop
+              lockTONber Airdrop
             </h2>
             <p className="text-gray-300 mb-6">
               87 billion tokens distributed proportionally to all holders in following months!
