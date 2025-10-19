@@ -56,6 +56,20 @@ export default function Home() {
               lockTONber
             </span>
           </h1>
+          
+          {/* Pyramid Loader */}
+          <div className="flex justify-center mb-8">
+            <div className="pyramid-loader">
+              <div className="wrapper">
+                <div className="side side1"></div>
+                <div className="side side2"></div>
+                <div className="side side3"></div>
+                <div className="side side4"></div>
+                <div className="shadow"></div>
+              </div>
+            </div>
+          </div>
+          
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
             Lock in on TON in October
           </p>
