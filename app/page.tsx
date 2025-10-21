@@ -65,6 +65,7 @@ export default function Home() {
                 <div className="side side2"></div>
                 <div className="side side3"></div>
                 <div className="side side4"></div>
+                <div className="base"></div>
                 <div className="shadow"></div>
               </div>
             </div>
