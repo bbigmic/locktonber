@@ -131,6 +131,88 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Airdrop Timeline Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">
+            <span className="bg-gradient-to-r from-[#0098EA] to-[#0098EA] bg-clip-text text-transparent">
+              Airdrop Timeline
+            </span>
+          </h2>
+          
+          <div className="space-y-6">
+            {/* Nov 1 */}
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-[#0098EA]">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Nov 1: 1B tokens</h3>
+                  <blockquote className="text-gray-300 italic text-lg">
+                    "First airdrop, holders double their bags!"
+                  </blockquote>
+                </div>
+                <div className="text-sm text-gray-400">2025</div>
+              </div>
+            </div>
+
+            {/* Dec 1 */}
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-300">Dec 1: 2B tokens</h3>
+                <div className="text-sm text-gray-400">2025</div>
+              </div>
+            </div>
+
+            {/* Jan 1 */}
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-300">Jan 1: 3B tokens</h3>
+                <div className="text-sm text-gray-400">2026</div>
+              </div>
+            </div>
+
+            {/* Feb 1 */}
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-300">Feb 1: 5B tokens</h3>
+                <div className="text-sm text-gray-400">2026</div>
+              </div>
+            </div>
+
+            {/* Mar 1 */}
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-300">Mar 1: 8B tokens</h3>
+                <div className="text-sm text-gray-400">2026</div>
+              </div>
+            </div>
+
+            {/* Apr 1 */}
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-300">Apr 1: 13B tokens</h3>
+                <div className="text-sm text-gray-400">2026</div>
+              </div>
+            </div>
+
+            {/* May 1 */}
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-300">May 1: 21B tokens</h3>
+                <div className="text-sm text-gray-400">2026</div>
+              </div>
+            </div>
+
+            {/* Jun 1 */}
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-300">Jun 1: 34B tokens</h3>
+                <div className="text-sm text-gray-400">2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-8 bg-gray-900 border-t border-gray-800">
         <div className="max-w-4xl mx-auto px-4 text-center">
