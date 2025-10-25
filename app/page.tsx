@@ -98,7 +98,7 @@ export default function Home() {
             <p className="text-gray-300 mb-6">
               87 billion tokens distributed proportionally to all holders in following months!
             </p>
-            <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full hover:opacity-90 transition-opacity">
+            <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full hover:opacity-90 transition-opacity" onclick="window.location.href='https://app.ston.fi/swap?ft=TON&tt=EQDvc_TcB_lUR-QAM5n-v2n0mFprdArD6yPTZN4FRZfqeS5I&chartVisible=true&chartInterval=1w&fa=%2210%22'">
               Join Now
             </button>
           </div>
