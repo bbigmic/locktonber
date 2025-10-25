@@ -53,7 +53,7 @@ export default function Home() {
         <div className="text-center max-w-4xl mt-16 mx-auto">
           <h1 className="text-6xl md:text-8xl font-bold mb-6">
             <span className="bg-gradient-to-r from-[#0098EA] to-[#0098EA] bg-clip-text text-transparent">
-              lockTONber
+              TONVEMBULL
             </span>
           </h1>
           
@@ -93,12 +93,12 @@ export default function Home() {
 
           <div className="bg-gray-800/30 rounded-2xl p-8 max-w-2xl mx-auto mb-8">
             <h2 className="text-2xl font-bold text-[#0098EA] mb-4">
-              lockTONber Airdrop
+              TONVEMBULL Airdrop
             </h2>
             <p className="text-gray-300 mb-6">
               87 billion tokens distributed proportionally to all holders in following months!
             </p>
-            <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full hover:opacity-90 transition-opacity" onclick="window.location.href='https://app.ston.fi/swap?ft=TON&tt=EQDvc_TcB_lUR-QAM5n-v2n0mFprdArD6yPTZN4FRZfqeS5I&chartVisible=true&chartInterval=1w&fa=%2210%22'">
+            <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full hover:opacity-90 transition-opacity" onClick={() => window.location.href='https://app.ston.fi/swap?ft=TON&tt=EQDvc_TcB_lUR-QAM5n-v2n0mFprdArD6yPTZN4FRZfqeS5I&chartVisible=true&chartInterval=1w&fa=%2210%22'}>
               Join Now
             </button>
           </div>
@@ -135,7 +135,7 @@ export default function Home() {
       <footer className="py-8 bg-gray-900 border-t border-gray-800">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="text-gray-400 text-sm">
-            © 2025 lockTONber. All rights reserved.
+            © 2025 TONVEMBULL. All rights reserved.
           </div>
         </div>
       </footer>

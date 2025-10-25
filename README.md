@@ -1,6 +1,6 @@
-# lockTONber Landing Page
+# TONVEMBULL Landing Page
 
-Beautiful landing page for lockTONber token on TON Blockchain, built with Next.js, TypeScript and Tailwind CSS.
+Beautiful landing page for TONVEMBULL token on TON Blockchain, built with Next.js, TypeScript and Tailwind CSS.
 
 ## 🚀 Features
 
@@ -13,9 +13,9 @@ Beautiful landing page for lockTONber token on TON Blockchain, built with Next.j
 
 ## 📊 Token Statistics
 
-- **Total Supply**: 88,888,888,888 lockTONber
-- **Liquidity Pool**: 8,888,888,888 lockTONber
-- **Airdrop Pool**: 80,000,000,000 lockTONber (proportionally in October)
+- **Total Supply**: 88,888,888,888 TONVEMBULL
+- **Liquidity Pool**: 8,888,888,888 TONVEMBULL
+- **Airdrop Pool**: 80,000,000,000 TONVEMBULL (proportionally in October)
 
 ## 🛠️ Technologies
 
@@ -51,8 +51,8 @@ The landing page is fully responsive and works on:
 
 ### Colors
 - **TON Blue**: #0088CC
-- **lockTONber Gold**: #FFD700
-- **lockTONber Purple**: #8B5CF6
+- **TONVEMBULL Gold**: #FFD700
+- **TONVEMBULL Purple**: #8B5CF6
 - **Dark Background**: #1A1A1A
 - **Gray Background**: #2A2A2A
 
@@ -86,4 +86,4 @@ You can easily customize:
 
 ## 📞 Contact
 
-Created for the lockTONber community on TON Blockchain.
+Created for the TONVEMBULL community on TON Blockchain.
