@@ -145,7 +145,7 @@ export default function Home() {
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-[#0098EA]">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Nov 1: 1B tokens</h3>
+                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Nov 1st: 1B tokens</h3>
                   <blockquote className="text-gray-300 italic text-lg">
                     "First airdrop, holders double their bags!"
                   </blockquote>
@@ -157,7 +157,7 @@ export default function Home() {
             {/* Dec 1 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Dec 1: 2B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">Dec 1st: 2B tokens</h3>
                 <div className="text-sm text-gray-400">2025</div>
               </div>
             </div>
@@ -165,7 +165,7 @@ export default function Home() {
             {/* Jan 1 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Jan 1: 3B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">Jan 1st: 3B tokens</h3>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function Home() {
             {/* Feb 1 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Feb 1: 5B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">Feb 1st: 5B tokens</h3>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
@@ -181,7 +181,7 @@ export default function Home() {
             {/* Mar 1 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Mar 1: 8B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">Mar 1st: 8B tokens</h3>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
@@ -189,7 +189,7 @@ export default function Home() {
             {/* Apr 1 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Apr 1: 13B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">Apr 1st: 13B tokens</h3>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
@@ -197,7 +197,7 @@ export default function Home() {
             {/* May 1 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">May 1: 21B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">May 1st: 21B tokens</h3>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
@@ -205,7 +205,7 @@ export default function Home() {
             {/* Jun 1 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Jun 1: 34B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">Jun 1st: 34B tokens</h3>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
