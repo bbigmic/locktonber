@@ -51,7 +51,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4">
         <div className="text-center max-w-4xl mt-16 mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6">
             <span className="bg-gradient-to-r from-[#0098EA] to-[#0098EA] bg-clip-text text-transparent">
               TONVEMBULL
             </span>
@@ -98,7 +98,7 @@ export default function Home() {
             <p className="text-gray-300 mb-6">
               87 billion tokens distributed proportionally to all holders in following months!
             </p>
-            <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full hover:opacity-90 transition-opacity" onClick={() => window.location.href='https://app.ston.fi/swap?ft=TON&tt=EQDvc_TcB_lUR-QAM5n-v2n0mFprdArD6yPTZN4FRZfqeS5I&chartVisible=true&chartInterval=1w&fa=%2210%22'}>
+            <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full hover:opacity-90 transition-opacity" onClick={() => window.location.href='https://app.ston.fi/swap?ft=TON&tt=EQDvc_TcB_lUR-QAM5n-v2n0mFprdArD6yPTZN4FRZfqeS5I&chartVisible=true&chartInterval=1w&fa=%22100%22'}>
               Join Now
             </button>
           </div>
