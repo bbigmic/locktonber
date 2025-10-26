@@ -213,6 +213,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Chart Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-8">
+            <span className="bg-gradient-to-r from-[#0098EA] to-[#0098EA] bg-clip-text text-transparent">
+              Live Chart
+            </span>
+          </h2>
+          <div className="bg-gray-800/30 rounded-2xl overflow-hidden" style={{ height: '600px' }}>
+            <iframe
+              height="100%"
+              width="100%"
+              id="geckoterminal-embed"
+              title="GeckoTerminal Embed"
+              src="https://www.geckoterminal.com/ton/pools/EQA_-ReWXXl5TL1PgbZti-nQw6VKU9CbMCydEcGEzIq_au3N?embed=1&info=1&swaps=1&grayscale=0&light_chart=0&chart_type=price&resolution=15m"
+              frameBorder="0"
+              allow="clipboard-write"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-8 bg-gray-900 border-t border-gray-800">
         <div className="max-w-4xl mx-auto px-4 text-center">
