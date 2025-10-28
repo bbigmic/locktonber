@@ -77,6 +77,17 @@ body {
   background: linear-gradient(to bottom right, #228B22, #00FF7F);
 }
 
+.side-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%) rotate(180deg);
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  z-index: 10;
+}
+
 .pyramid-loader .wrapper .base {
   width: 70px;
   height: 70px;
