@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   keywords: 'TONVEMBULL, TON, blockchain, token, airdrop, DeFi',
   authors: [{ name: 'TONVEMBULL Team' }],
   viewport: 'width=device-width, initial-scale=1',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/tonvembull-ico.png',
+  },
 }
 
 export default function RootLayout({

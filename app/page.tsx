@@ -14,24 +14,26 @@ export default function Home() {
     const timer = setInterval(() => {
       const now = new Date()
       
-      // Znajdź najbliższy 1 dzień miesiąca o 2:00
-      const nextFirstOfMonth = new Date(now)
-      nextFirstOfMonth.setDate(1)
-      nextFirstOfMonth.setHours(2, 0, 0, 0)
+      // Znajdź najbliższy ostatni dzień miesiąca o 23:59
+      const nextLastOfMonth = new Date(now)
+      nextLastOfMonth.setMonth(nextLastOfMonth.getMonth() + 1, 0) // 0 dzień następnego miesiąca = ostatni dzień poprzedniego
+      nextLastOfMonth.setHours(23, 59, 0, 0)
       
-      // Jeśli już minął 1 dzień tego miesiąca o 2:00, ustaw na następny miesiąc
-      if (now.getDate() > 1 || (now.getDate() === 1 && now.getHours() >= 2)) {
-        nextFirstOfMonth.setMonth(nextFirstOfMonth.getMonth() + 1)
+      // Jeśli już minął ostatni dzień tego miesiąca o 23:59, ustaw na następny miesiąc
+      const lastDayOfCurrentMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0)
+      if (now.getDate() > lastDayOfCurrentMonth.getDate() || 
+          (now.getDate() === lastDayOfCurrentMonth.getDate() && (now.getHours() > 23 || (now.getHours() === 23 && now.getMinutes() >= 59)))) {
+        nextLastOfMonth.setMonth(nextLastOfMonth.getMonth() + 1, 0)
       }
       
-      // Upewnij się, że nie jesteśmy przed 1 listopada 2025
-      const startDate = new Date(2025, 10, 1, 2, 0, 0, 0) // listopad = 10 (0-indexed)
-      if (nextFirstOfMonth < startDate) {
-        nextFirstOfMonth.setFullYear(2025, 10, 1)
-        nextFirstOfMonth.setHours(2, 0, 0, 0)
+      // Upewnij się, że nie jesteśmy przed 30 listopada 2025
+      const startDate = new Date(2025, 10, 30, 23, 59, 0, 0) // listopad = 10 (0-indexed), ostatni dzień
+      if (nextLastOfMonth < startDate) {
+        nextLastOfMonth.setFullYear(2025, 10, 30)
+        nextLastOfMonth.setHours(23, 59, 0, 0)
       }
       
-      const distance = nextFirstOfMonth.getTime() - now.getTime()
+      const distance = nextLastOfMonth.getTime() - now.getTime()
 
       if (distance > 0) {
         setTimeLeft({
@@ -149,11 +151,11 @@ export default function Home() {
           </h2>
           
           <div className="space-y-6">
-            {/* Nov 1 */}
+            {/* Nov 30 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-[#0098EA]">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Nov 1st: 1B tokens</h3>
+                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Nov 30th: 1B tokens</h3>
                   <blockquote className="text-gray-300 italic text-lg">
                     "First airdrop, holders double their bags!"
                   </blockquote>
@@ -162,58 +164,58 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Dec 1 */}
+            {/* Dec 31 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Dec 1st: 2B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">Dec 31st: 2B tokens</h3>
                 <div className="text-sm text-gray-400">2025</div>
               </div>
             </div>
 
-            {/* Jan 1 */}
+            {/* Jan 31 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Jan 1st: 3B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">Jan 31st: 3B tokens</h3>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
 
-            {/* Feb 1 */}
+            {/* Feb 28 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Feb 1st: 5B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">Feb 28th: 5B tokens</h3>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
 
-            {/* Mar 1 */}
+            {/* Mar 31 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Mar 1st: 8B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">Mar 31st: 8B tokens</h3>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
 
-            {/* Apr 1 */}
+            {/* Apr 30 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Apr 1st: 13B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">Apr 30th: 13B tokens</h3>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
 
-            {/* May 1 */}
+            {/* May 31 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">May 1st: 21B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">May 31st: 21B tokens</h3>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
 
-            {/* Jun 1 */}
+            {/* Jun 30 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Jun 1st: 34B tokens</h3>
+                <h3 className="text-xl font-bold text-gray-300">Jun 30th: 34B tokens</h3>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
