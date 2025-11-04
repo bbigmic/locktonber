@@ -14,23 +14,33 @@ export default function Home() {
     const timer = setInterval(() => {
       const now = new Date()
       
-      // Znajdź najbliższy ostatni dzień miesiąca o 23:59
+      // Znajdź najbliższy ostatni dzień miesiąca o 23:59 (UTC+1)
+      // 23:59 UTC+1 = 22:59 UTC
       const nextLastOfMonth = new Date(now)
-      nextLastOfMonth.setMonth(nextLastOfMonth.getMonth() + 1, 0) // 0 dzień następnego miesiąca = ostatni dzień poprzedniego
-      nextLastOfMonth.setHours(23, 59, 0, 0)
+      nextLastOfMonth.setUTCDate(1)
+      nextLastOfMonth.setUTCMonth(nextLastOfMonth.getUTCMonth() + 1)
+      nextLastOfMonth.setUTCDate(0) // Ostatni dzień poprzedniego miesiąca
+      nextLastOfMonth.setUTCHours(22, 59, 0, 0) // 23:59 UTC+1 = 22:59 UTC
       
-      // Jeśli już minął ostatni dzień tego miesiąca o 23:59, ustaw na następny miesiąc
-      const lastDayOfCurrentMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0)
-      if (now.getDate() > lastDayOfCurrentMonth.getDate() || 
-          (now.getDate() === lastDayOfCurrentMonth.getDate() && (now.getHours() > 23 || (now.getHours() === 23 && now.getMinutes() >= 59)))) {
-        nextLastOfMonth.setMonth(nextLastOfMonth.getMonth() + 1, 0)
+      // Jeśli już minął ostatni dzień tego miesiąca o 23:59 UTC+1, ustaw na następny miesiąc
+      const nowUTC = new Date(now.getTime())
+      const lastDayOfCurrentMonth = new Date(nowUTC)
+      lastDayOfCurrentMonth.setUTCDate(1)
+      lastDayOfCurrentMonth.setUTCMonth(lastDayOfCurrentMonth.getUTCMonth() + 1)
+      lastDayOfCurrentMonth.setUTCDate(0)
+      lastDayOfCurrentMonth.setUTCHours(22, 59, 0, 0)
+      
+      if (now.getTime() >= lastDayOfCurrentMonth.getTime()) {
+        nextLastOfMonth.setUTCMonth(nextLastOfMonth.getUTCMonth() + 1, 0)
+        nextLastOfMonth.setUTCDate(0)
+        nextLastOfMonth.setUTCHours(22, 59, 0, 0)
       }
       
-      // Upewnij się, że nie jesteśmy przed 30 listopada 2025
-      const startDate = new Date(2025, 10, 30, 23, 59, 0, 0) // listopad = 10 (0-indexed), ostatni dzień
-      if (nextLastOfMonth < startDate) {
-        nextLastOfMonth.setFullYear(2025, 10, 30)
-        nextLastOfMonth.setHours(23, 59, 0, 0)
+      // Upewnij się, że nie jesteśmy przed 30 listopada 2025 23:59 UTC+1 (22:59 UTC)
+      const startDate = new Date(Date.UTC(2025, 10, 30, 22, 59, 0, 0)) // listopad = 10 (0-indexed), 22:59 UTC
+      if (nextLastOfMonth.getTime() < startDate.getTime()) {
+        nextLastOfMonth.setUTCFullYear(2025, 10, 30)
+        nextLastOfMonth.setUTCHours(22, 59, 0, 0)
       }
       
       const distance = nextLastOfMonth.getTime() - now.getTime()
@@ -82,7 +92,7 @@ export default function Home() {
           </div>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Lock in on TON in October
+          Starting Bull Run on TON with TONVEMBULL
           </p>
           
           {/* Token Stats */}

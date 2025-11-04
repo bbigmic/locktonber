@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'TONVEMBULL - Lock in on TON in October',
-  description: 'TONVEMBULL is a revolutionary token on TON Blockchain with unique airdrop system and liquidity.',
+  title: 'TONVEMBULL - Starting Bull Run on TON with TONVEMBULL',
+  description: 'TONVEMBULL is a revolutionary token on TON Blockchain with unique airdrop system.',
   keywords: 'TONVEMBULL, TON, blockchain, token, airdrop, DeFi',
   authors: [{ name: 'TONVEMBULL Team' }],
   viewport: 'width=device-width, initial-scale=1',
