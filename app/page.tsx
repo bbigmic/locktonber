@@ -9,6 +9,19 @@ export default function Home() {
     minutes: 0,
     seconds: 0
   })
+  const [copied, setCopied] = useState(false)
+
+  const contractAddress = 'EQDvc_TcB_lUR-QAM5n-v2n0mFprdArD6yPTZN4FRZfqeS5I'
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(contractAddress)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy:', err)
+    }
+  }
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -69,6 +82,22 @@ export default function Home() {
             </span>
           </h1>
           
+          {/* Contract Address */}
+          <div className="mb-8">
+            <p className="text-lg md:text-xl text-gray-300 mb-3">$TVB CA</p>
+            <div className="flex items-center justify-center gap-3">
+              <code className="bg-gray-800/50 px-4 py-2 rounded-lg text-sm md:text-base text-gray-300 font-mono break-all max-w-full">
+                {contractAddress}
+              </code>
+              <button
+                onClick={copyToClipboard}
+                className="px-4 py-2 bg-[#0098EA] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity whitespace-nowrap"
+              >
+                {copied ? 'Skopiowano!' : 'Kopiuj'}
+              </button>
+            </div>
+          </div>
+          
           {/* Pyramid Loader */}
           <div className="flex justify-center mb-8">
             <div className="pyramid-loader">
@@ -118,9 +147,14 @@ export default function Home() {
             <p className="text-gray-300 mb-6">
               87 billion tokens distributed proportionally to all holders in following months!
             </p>
-            <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full hover:opacity-90 transition-opacity" onClick={() => window.location.href='https://app.ston.fi/swap?ft=TON&tt=EQDvc_TcB_lUR-QAM5n-v2n0mFprdArD6yPTZN4FRZfqeS5I&chartVisible=true&chartInterval=1w&fa=%22100%22'}>
-              Join Now
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full hover:opacity-90 transition-opacity" onClick={() => window.location.href='https://t.me/tonvembull_cto_bot'}>
+                Join CTO
+              </button>
+              <button className="px-8 py-3 border-2 border-[#0098EA] text-[#0098EA] font-bold rounded-full hover:bg-[#0098EA] hover:text-white transition-all" onClick={() => window.location.href='https://app.ston.fi/swap?ft=TON&tt=EQDvc_TcB_lUR-QAM5n-v2n0mFprdArD6yPTZN4FRZfqeS5I&chartVisible=true&chartInterval=1w&fa=%22100%22'}>
+                Swap on dex
+              </button>
+            </div>
           </div>
 
           {/* Countdown Timer */}
@@ -162,22 +196,27 @@ export default function Home() {
           
           <div className="space-y-6">
             {/* Nov 30 */}
-            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-[#0098EA]">
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-500 opacity-60">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Nov 30th: 1B tokens</h3>
-                  <blockquote className="text-gray-300 italic text-lg">
+                  <h3 className="text-xl font-bold text-gray-500 mb-2 line-through">Nov 30th: 1B tokens</h3>
+                  <blockquote className="text-gray-500 italic text-lg line-through">
                     "First airdrop, holders double their bags!"
                   </blockquote>
                 </div>
-                <div className="text-sm text-gray-400">2025</div>
+                <div className="text-sm text-gray-500">2025</div>
               </div>
             </div>
 
             {/* Dec 31 */}
-            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Dec 31st: 2B tokens</h3>
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-[#0098EA]">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Dec 31st: 2B tokens</h3>
+                  <blockquote className="text-gray-300 italic text-lg">
+                    "DECEMBULL vibes! Diamond hands getting rewarded!"
+                  </blockquote>
+                </div>
                 <div className="text-sm text-gray-400">2025</div>
               </div>
             </div>
