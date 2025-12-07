@@ -148,8 +148,8 @@ export default function Home() {
               87 billion tokens distributed proportionally to all holders in following months!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full hover:opacity-90 transition-opacity" onClick={() => window.location.href='https://t.me/tonvembull_cto_bot'}>
-                Join CTO
+              <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full opacity-50 cursor-not-allowed transition-opacity" disabled>
+                Join CTO (Soon)
               </button>
               <button className="px-8 py-3 border-2 border-[#0098EA] text-[#0098EA] font-bold rounded-full hover:bg-[#0098EA] hover:text-white transition-all" onClick={() => window.location.href='https://app.ston.fi/swap?ft=TON&tt=EQDvc_TcB_lUR-QAM5n-v2n0mFprdArD6yPTZN4FRZfqeS5I&chartVisible=true&chartInterval=1w&fa=%22100%22'}>
                 Swap on dex
