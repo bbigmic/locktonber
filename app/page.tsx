@@ -24,47 +24,26 @@ export default function Home() {
   }
 
   useEffect(() => {
+    // Kolejne airdropy: ostatni dzień października i listopada 2026, 23:59 UTC+1 (22:59 UTC)
+    const upcomingAirdrops = [
+      new Date(Date.UTC(2026, 9, 31, 22, 59, 0, 0)), // Oct 31
+      new Date(Date.UTC(2026, 10, 30, 22, 59, 0, 0)), // Nov 30
+    ] as const
+
     const timer = setInterval(() => {
       const now = new Date()
-      
-      // Znajdź najbliższy ostatni dzień miesiąca o 23:59 (UTC+1)
-      // 23:59 UTC+1 = 22:59 UTC
-      const nextLastOfMonth = new Date(now)
-      nextLastOfMonth.setUTCDate(1)
-      nextLastOfMonth.setUTCMonth(nextLastOfMonth.getUTCMonth() + 1)
-      nextLastOfMonth.setUTCDate(0) // Ostatni dzień poprzedniego miesiąca
-      nextLastOfMonth.setUTCHours(22, 59, 0, 0) // 23:59 UTC+1 = 22:59 UTC
-      
-      // Jeśli już minął ostatni dzień tego miesiąca o 23:59 UTC+1, ustaw na następny miesiąc
-      const nowUTC = new Date(now.getTime())
-      const lastDayOfCurrentMonth = new Date(nowUTC)
-      lastDayOfCurrentMonth.setUTCDate(1)
-      lastDayOfCurrentMonth.setUTCMonth(lastDayOfCurrentMonth.getUTCMonth() + 1)
-      lastDayOfCurrentMonth.setUTCDate(0)
-      lastDayOfCurrentMonth.setUTCHours(22, 59, 0, 0)
-      
-      if (now.getTime() >= lastDayOfCurrentMonth.getTime()) {
-        nextLastOfMonth.setUTCMonth(nextLastOfMonth.getUTCMonth() + 1, 0)
-        nextLastOfMonth.setUTCDate(0)
-        nextLastOfMonth.setUTCHours(22, 59, 0, 0)
-      }
-      
-      // Upewnij się, że nie jesteśmy przed 30 listopada 2025 23:59 UTC+1 (22:59 UTC)
-      const startDate = new Date(Date.UTC(2025, 10, 30, 22, 59, 0, 0)) // listopad = 10 (0-indexed), 22:59 UTC
-      if (nextLastOfMonth.getTime() < startDate.getTime()) {
-        nextLastOfMonth.setUTCFullYear(2025, 10, 30)
-        nextLastOfMonth.setUTCHours(22, 59, 0, 0)
-      }
-      
-      const distance = nextLastOfMonth.getTime() - now.getTime()
+      const next = upcomingAirdrops.find((d) => d.getTime() > now.getTime())
+      const distance = next ? next.getTime() - now.getTime() : 0
 
       if (distance > 0) {
         setTimeLeft({
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
           hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
           minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((distance % (1000 * 60)) / 1000)
+          seconds: Math.floor((distance % (1000 * 60)) / 1000),
         })
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
       }
     }, 1000)
 
@@ -145,7 +124,7 @@ export default function Home() {
               TONVEMBULL Airdrop
             </h2>
             <p className="text-gray-300 mb-6">
-              87 billion tokens distributed proportionally to all holders in following months!
+              87 billion tokens distributed proportionally to all holders — next snapshots at end of October and November!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full opacity-50 cursor-not-allowed transition-opacity" disabled>
@@ -160,7 +139,7 @@ export default function Home() {
           {/* Countdown Timer */}
           <div className="bg-gray-800/30 rounded-2xl p-8 mb-16 max-w-2xl mx-auto">
             <h3 className="text-xl font-bold text-[#0098EA] mb-6">
-              Next Monthly Airdrop in:
+              Next Airdrop in:
             </h3>
             <div className="grid grid-cols-4 gap-4">
               <div className="text-center">
@@ -209,62 +188,105 @@ export default function Home() {
             </div>
 
             {/* Dec 31 */}
-            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-[#0098EA]">
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-500 opacity-60">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Dec 31st: 2B tokens</h3>
-                  <blockquote className="text-gray-300 italic text-lg">
-                    "DECEMBULL vibes! Diamond hands getting rewarded!"
+                  <h3 className="text-xl font-bold text-gray-500 mb-2 line-through">Dec 31st: 2B tokens</h3>
+                  <blockquote className="text-gray-500 italic text-lg line-through">
+                    "Year-end closeout — DECEMBULL rang the bell with 2B under the tree!"
                   </blockquote>
                 </div>
-                <div className="text-sm text-gray-400">2025</div>
+                <div className="text-sm text-gray-500">2025</div>
               </div>
             </div>
 
             {/* Jan 31 */}
-            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Jan 31st: 3B tokens</h3>
-                <div className="text-sm text-gray-400">2026</div>
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-500 opacity-60">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-500 mb-2 line-through">Jan 31st: 3B tokens</h3>
+                  <blockquote className="text-gray-500 italic text-lg line-through">
+                    "New year, same conviction — January stacked 3B for the resolvers who stayed!"
+                  </blockquote>
+                </div>
+                <div className="text-sm text-gray-500">2026</div>
               </div>
             </div>
 
             {/* Feb 28 */}
-            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Feb 28th: 5B tokens</h3>
-                <div className="text-sm text-gray-400">2026</div>
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-500 opacity-60">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-500 mb-2 line-through">Feb 28th: 5B tokens</h3>
+                  <blockquote className="text-gray-500 italic text-lg line-through">
+                    "Short month, Fibonacci five — February lovers of TON split 5B!"
+                  </blockquote>
+                </div>
+                <div className="text-sm text-gray-500">2026</div>
               </div>
             </div>
 
             {/* Mar 31 */}
-            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Mar 31st: 8B tokens</h3>
-                <div className="text-sm text-gray-400">2026</div>
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-500 opacity-60">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-500 mb-2 line-through">Mar 31st: 8B tokens</h3>
+                  <blockquote className="text-gray-500 italic text-lg line-through">
+                    "Q1 sprint to spring — March madness on TON dropped 8B on the faithful!"
+                  </blockquote>
+                </div>
+                <div className="text-sm text-gray-500">2026</div>
               </div>
             </div>
 
             {/* Apr 30 */}
-            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Apr 30th: 13B tokens</h3>
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-500 opacity-60">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-500 mb-2 line-through">Apr 30th: 13B tokens</h3>
+                  <blockquote className="text-gray-500 italic text-lg line-through">
+                    "April showers, TON flowers — lucky 13B bloomed for holders before May!"
+                  </blockquote>
+                </div>
+                <div className="text-sm text-gray-500">2026</div>
+              </div>
+            </div>
+
+            {/* May 31 — consolidated into Oct/Nov schedule */}
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-500 opacity-60">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-500 mb-2 line-through">May 31st: 21B tokens</h3>
+                  <blockquote className="text-gray-500 italic text-lg line-through">
+                    "Monthly cadence paused — same 21B tranche rolls into the late-October snapshot!"
+                  </blockquote>
+                </div>
+                <div className="text-sm text-gray-500">2026</div>
+              </div>
+            </div>
+
+            {/* Oct 31 — next airdrop */}
+            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-[#0098EA]">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Oct 31st: 21B tokens</h3>
+                  <blockquote className="text-gray-300 italic text-lg">
+                    "Autumn harvest on TON — October close locks 21B for holders before the final push!"
+                  </blockquote>
+                </div>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
 
-            {/* May 31 */}
+            {/* Nov 30 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">May 31st: 21B tokens</h3>
-                <div className="text-sm text-gray-400">2026</div>
-              </div>
-            </div>
-
-            {/* Jun 30 */}
-            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-300">Jun 30th: 34B tokens</h3>
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-300 mb-2">Nov 30th: 34B tokens</h3>
+                  <blockquote className="text-gray-400 italic text-lg">
+                    "TONVEMBULL anniversary energy — November finale drops 34B and closes the 87B arc!"
+                  </blockquote>
+                </div>
                 <div className="text-sm text-gray-400">2026</div>
               </div>
             </div>
