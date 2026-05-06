@@ -24,9 +24,8 @@ export default function Home() {
   }
 
   useEffect(() => {
-    // Kolejne airdropy: ostatni dzień października i listopada 2026, 23:59 UTC+1 (22:59 UTC)
+    // Ostatni airdrop: 30 listopada 2026, 23:59 UTC+1 (22:59 UTC)
     const upcomingAirdrops = [
-      new Date(Date.UTC(2026, 9, 31, 22, 59, 0, 0)), // Oct 31
       new Date(Date.UTC(2026, 10, 30, 22, 59, 0, 0)), // Nov 30
     ] as const
 
@@ -124,7 +123,7 @@ export default function Home() {
               TONVEMBULL Airdrop
             </h2>
             <p className="text-gray-300 mb-6">
-              87 billion tokens distributed proportionally to all holders — next snapshots at end of October and November!
+              87 billion tokens distributed proportionally to all holders - final snapshot at the end of November!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-3 bg-[#0098EA] text-white font-bold rounded-full opacity-50 cursor-not-allowed transition-opacity" disabled>
@@ -252,39 +251,26 @@ export default function Home() {
               </div>
             </div>
 
-            {/* May 31 — consolidated into Oct/Nov schedule */}
+            {/* May 31 — consolidated into final November schedule */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-500 opacity-60">
               <div className="flex justify-between items-start">
                 <div>
                   <h3 className="text-xl font-bold text-gray-500 mb-2 line-through">May 31st: 21B tokens</h3>
                   <blockquote className="text-gray-500 italic text-lg line-through">
-                    "Monthly cadence paused — same 21B tranche rolls into the late-October snapshot!"
+                    "Monthly cadence paused - this 21B tranche rolls into the final November snapshot!"
                   </blockquote>
                 </div>
                 <div className="text-sm text-gray-500">2026</div>
               </div>
             </div>
 
-            {/* Oct 31 — next airdrop */}
+            {/* Nov 30 */}
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-[#0098EA]">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Oct 31st: 21B tokens</h3>
+                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Nov 30th: 55B tokens</h3>
                   <blockquote className="text-gray-300 italic text-lg">
-                    "Autumn harvest on TON — October close locks 21B for holders before the final push!"
-                  </blockquote>
-                </div>
-                <div className="text-sm text-gray-400">2026</div>
-              </div>
-            </div>
-
-            {/* Nov 30 */}
-            <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-gray-600">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-300 mb-2">Nov 30th: 34B tokens</h3>
-                  <blockquote className="text-gray-400 italic text-lg">
-                    "TONVEMBULL anniversary energy — November finale drops 34B and closes the 87B arc!"
+                    "TONVEMBULL anniversary finale - November drops the last 55B and closes the full 87B arc!"
                   </blockquote>
                 </div>
                 <div className="text-sm text-gray-400">2026</div>
