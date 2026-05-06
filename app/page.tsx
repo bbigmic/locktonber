@@ -257,7 +257,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-bold text-gray-500 mb-2 line-through">May 31st: 21B tokens</h3>
                   <blockquote className="text-gray-500 italic text-lg line-through">
-                    "Monthly cadence paused - this 21B tranche rolls into the final November snapshot!"
+                    "Monthly cadence paused - May checkpoint was skipped in the updated schedule."
                   </blockquote>
                 </div>
                 <div className="text-sm text-gray-500">2026</div>
@@ -268,9 +268,9 @@ export default function Home() {
             <div className="bg-gray-800/30 rounded-xl p-6 border-l-4 border-[#0098EA]">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Nov 30th: 55B tokens</h3>
+                  <h3 className="text-xl font-bold text-[#0098EA] mb-2">Nov 30th: 34B tokens</h3>
                   <blockquote className="text-gray-300 italic text-lg">
-                    "TONVEMBULL anniversary finale - November drops the last 55B and closes the full 87B arc!"
+                    "TONVEMBULL anniversary finale - November drops the last 34B."
                   </blockquote>
                 </div>
                 <div className="text-sm text-gray-400">2026</div>
